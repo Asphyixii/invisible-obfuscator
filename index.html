@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta title="Asphyixii | JS Obfuscator">
+        <meta content="JS Obfuscator that makes your code mostly invisible.">
+    </head>
+    <body>
+        <textarea type="text" placeholder="Type code here!" id="input"></textarea>
+        <span id="output"></span>
+        <span id="submit" onclick="doit()" contenteditable="false">Obfuscate</span>
+        <span id="disclaimer">This really isn't too secure, so don't use only this to secure your code. Obfuscate it at <a href="https://obfuscator.io">Obfuscator.io</a> before obfuscating here. Also: some scripts don't work after obfuscating here. </span>
+        <script>
+                function doit(){
+                    var base = document.getElementById("input").value
+                    var str = base + " //asphy.dev/generator"
+                    var str2 = str.split('').map(function (char) {
+        return char.charCodeAt(0).toString(2);
+    }).join(' ');
+    var str3 = str2.split("1").join("⁣").split("0").join("​").split(" ").join('⁢')
+    var output = "/"+str3+`/.source.split("​").join("0").split("⁣").join("1").split('⁢').map(b => parseInt(b, 2),html = "").map(num => html = html + String.fromCharCode(num)).join(''); eval(html);`
+    document.getElementById("output").textContent = output;
+}
+          
+        </script>
+        <style>@font-face { font-family: sp; src: url('https://cdn.glitch.com/41a92b01-f020-4289-bb54-88d9d0870a03%2FSofia%20Pro%20Semi%20Bold%20Az.otf?v=1607824620771'); } </style>
+    
+        <style>
+            body{
+                background-color:#16161D;
+
+            }
+            #input{
+                position:absolute;
+                top:35%;
+                left:50%;
+                height:45%;
+                width:50%;
+                border: 5px solid #fff;
+                border-radius:25px;
+                background-color:#16161D;
+                color:#fff;
+                font-family:sp;
+                transform:translate(-50%,-50%);
+                vertical-align:text-top;
+                text-indent: 25px;
+                text-anchor: start;
+            }
+            #output{
+                position:absolute;
+                transform:translate(-50%,-50%);
+                top:80%;
+                left:50%;
+                height:25%;
+                width:50%;
+                border: 5px solid #fff;
+                border-radius:25px;
+                background-color:#16161D;
+                color:#fff;
+                font-family:sp;
+            }
+            #submit{
+                position:absolute;
+                width:20%;
+                height:150px;
+                left:1%;
+                top:25%;
+                background-color:#fff;
+                color:#000;
+                border-radius:25px;
+                font-family:sp;
+                text-align:center;
+                font-size:45px;
+                cursor:pointer;
+                line-height:150px
+            }
+            #disclaimer{
+                color:#fff;
+                position:absolute;
+                font-family:sp;
+                left:3%;
+                top:95%;
+            }
+        </style>
+    </body>
+</html>
